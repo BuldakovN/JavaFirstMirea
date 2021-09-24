@@ -1,5 +1,20 @@
 package ru.mirea.task4;
 
+public class BallTester{
+    static public void main(String[] args){
+        Ball b1 = new Ball();
+        b1.setX(1.0);
+        b1.setY(1.0);
+        System.out.println(b1.toString());
+
+        b1.move(2.0, -1.5);
+        System.out.println(b1.toString());
+
+        b1.setXY(0, 0);
+        System.out.println(b1.toString());
+    }
+}
+
 class Ball{
     private double x,y;
     public Ball(){}
@@ -37,20 +52,5 @@ class Ball{
 
     public String toString(){
         return "Ball (" + this.x + ", " + this.y + ")";
-    }
-}
-
-class BallTester{
-    static public void main(){
-        Ball b1 = new Ball();
-        b1.setX(1.0);
-        b1.setY(1.0);
-        System.out.println(b1.toString());
-
-        b1.move(2.0, -1.5);
-        System.out.println(b1.toString());
-
-        b1.setXY(0, 0);
-        System.out.println(b1.toString());
     }
 }

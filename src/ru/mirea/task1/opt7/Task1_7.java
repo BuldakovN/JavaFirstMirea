@@ -8,7 +8,7 @@ public class Task1_7 {
         fac = 1;
         Scanner scann = new Scanner(System.in);
         n = scann.nextInt();
-        for (int i=1; i<n; i++){
+        for (int i=1; i<=n; i++){
             fac*=i;
         }
         System.out.println("Факториал числа " + n + " равен " + fac);
