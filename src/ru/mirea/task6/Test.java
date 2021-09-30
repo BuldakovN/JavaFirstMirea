@@ -1,13 +1,5 @@
 package ru.mirea.task6;
 
-interface Nameable {
-    String getName();
-}
-
-interface Priceable{
-    int getPrice();
-}
-
 class Cat implements Nameable, Priceable{
     String name = "Жучка";
     int price = 15000;

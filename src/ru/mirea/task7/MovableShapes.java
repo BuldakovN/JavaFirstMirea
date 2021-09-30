@@ -29,7 +29,7 @@ public class MovableShapes {
         System.out.println(s3.getArea());
         System.out.println(s3.getPerimeter());
         System.out.println(s3.getColor());
-        //System.out.println(s3.getLength()); //Не будет работать, т.к. класс Shape не видит дочернии функции
+        //System.out.println(s3.getLength()); //Не будет работать, т.к. класс Shape не видит методы дочерних классов
 
         Rectangle r1 = (Rectangle)s3; // downcast
         System.out.println(r1);
@@ -41,7 +41,7 @@ public class MovableShapes {
         System.out.println(s4);
         System.out.println(s4.getArea());
         System.out.println(s4.getColor());
-        //System.out.println(s4.getSide()); //Не будет работать, т.к. класс Shape не видит дочернии функции
+        //System.out.println(s4.getSide()); //Не будет работать, т.к. класс Shape не видит методы дочерних классов
 
         // Take note that we downcast Shape s4 to Rectangle,
 // which is a superclass of Square, instead of Square
