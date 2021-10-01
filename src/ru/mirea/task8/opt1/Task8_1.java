@@ -19,8 +19,8 @@ public class Task8_1 {
                     a.add(new Rectangle(
                             rand.nextInt(200),
                             rand.nextInt(200),
-                            rand.nextInt(50)+50,
-                            rand.nextInt(50)+50,
+                            rand.nextInt(150)+50,
+                            rand.nextInt(150)+50,
                             colors[rand.nextInt(colors.length)]
                     ));
                     break;

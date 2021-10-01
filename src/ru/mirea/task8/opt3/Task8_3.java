@@ -18,11 +18,9 @@ public class Task8_3 extends JFrame {
 class ImagePanel extends JPanel {
 
     Image image;
-
     public ImagePanel() {
         image = Toolkit.getDefaultToolkit().createImage("src/ru/mirea/task8/opt3/cat-dancing.gif");
     }
-
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
