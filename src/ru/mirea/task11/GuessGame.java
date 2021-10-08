@@ -28,10 +28,6 @@ public class GuessGame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println(digit);
-                System.out.println(text.getText());
-                System.out.println(label.getText());
-                System.out.println("");
                 if (text.getText().isEmpty()){
                     label.setText("Вы ничего не ввели");
                 }
@@ -62,7 +58,7 @@ public class GuessGame {
         });
         constraints.gridy=2;
         panel.add(button, constraints);
-
+        root.setLocationRelativeTo(null);
         root.setSize(500,500);
         root.setVisible(true);
 
@@ -72,5 +68,6 @@ public class GuessGame {
         digit=(int)(Math.random()*21);
         trying=0;
         label.setText("Угадайте число");
+        System.out.println("Загаданное число -- " + digit);
     }
 }

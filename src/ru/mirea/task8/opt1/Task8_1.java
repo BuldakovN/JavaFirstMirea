@@ -43,6 +43,5 @@ public class Task8_1 {
         root.setLocationRelativeTo(null);
         root.setVisible(true);
         root.setSize(500,500);
-
     }
 }
