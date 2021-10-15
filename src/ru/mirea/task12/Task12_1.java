@@ -2,6 +2,7 @@ package ru.mirea.task12;
 //Сортировка вставками
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class Task12_1 {
     public static void main(String[] args) {
@@ -9,20 +10,77 @@ public class Task12_1 {
         for (int i = 0; i < 10; i++) {
             IDNumber[i] = new Student();
         }
+
+        //insertion sort
+        System.out.println("Insertion sort");
         System.out.println(Arrays.toString(IDNumber));
-        for (int left = 0; left < IDNumber.length; left++) {
-            Student value = IDNumber[left];
+        insertionSort(IDNumber);
+        System.out.println(Arrays.toString(IDNumber));
+        System.out.println();
+
+        //quick sort
+        System.out.println("Quick sort");
+        System.out.println(Arrays.toString(IDNumber));
+        quickSort(IDNumber);
+        System.out.println(Arrays.toString(IDNumber));
+        System.out.println();
+
+        //merge sort
+        System.out.println("Merge sort");
+        System.out.println(Arrays.toString(IDNumber));
+        mergeSort(IDNumber, 0, IDNumber.length-1);
+        System.out.println(Arrays.toString(IDNumber));
+
+    }
+
+    static void insertionSort(Student[] arr){
+        for (int left = 0; left < arr.length; left++) {
+            Student value = arr[left];
             int i = left - 1;
             for (; i >= 0; i--) {
-                if (value.ID < IDNumber[i].ID) {
-                    IDNumber[i + 1] = IDNumber[i];
+                if (value.ID < arr[i].ID) {
+                    arr[i + 1] = arr[i];
                 } else {
                     break;
                 }
             }
-            IDNumber[i + 1] = value;
+            arr[i + 1] = value;
         }
-        System.out.println(Arrays.toString(IDNumber));
+    }
+
+    static void quickSort(Student[] arr){
+        Comparator<Student> comp = new SortingStudentsByGPA();
+        Arrays.sort(arr, comp);
+    }
+
+    static void mergeSort(Student[] arr, int left, int right){
+        if (right <= left)
+            return;
+        int mid = left + (right - left) / 2;
+        mergeSort(arr, left, mid);
+        mergeSort(arr, mid + 1, right);
+
+        Student[] buffer = Arrays.copyOf(arr, arr.length);
+
+        for (int k = left; k <= right; k++)
+            buffer[k] = arr[k];
+
+        int i = left, j = mid + 1;
+        for (int k = left; k <= right; k++) {
+            if (i > mid) {
+                arr[k] = buffer[j];
+                j++;
+            } else if (j > right) {
+                arr[k] = buffer[i];
+                i++;
+            } else if (buffer[j].getID() < buffer[i].getID()) {
+                arr[k] = buffer[j];
+                j++;
+            } else {
+                arr[k] = buffer[i];
+                i++;
+            }
+        }
     }
 }
 
@@ -37,5 +95,9 @@ class Student{
         return "Student{" +
                 "ID=" + ID +
                 '}';
+    }
+
+    public int getID() {
+        return ID;
     }
 }
