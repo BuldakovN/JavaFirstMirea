@@ -3,7 +3,7 @@ package ru.mirea.task22;
 public class Task22 {
     public static void main(String[] args) {
         ChairFabric CH = new ChairFabric();
-        Chair chair = CH.getChair(1);
+        Chair chair = CH.getChair(2);
         Client client = new Client();
         client.Sit(chair);
     }

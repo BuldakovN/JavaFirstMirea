@@ -17,6 +17,7 @@ enum planets {
         this.mass=mass;
         this.radius=radius;
     }
+
     public double getG(){
         return 6.67*Math.pow(10, -11)*this.mass/Math.pow(this.mass, 2);
     };
@@ -40,7 +41,7 @@ public class Task17 {
             menu = scanner.nextInt();
             planets planet = getPlanet(menu);
             if (planet!=null){
-                System.out.println(planet);
+                System.out.println(planet.name() + planet);
             }else{
                 System.out.println("Введите число от 1 до 8 или 0 для выхода");
             }
